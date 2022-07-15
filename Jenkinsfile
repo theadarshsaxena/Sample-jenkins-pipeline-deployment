@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git(url: 'https://github.com/theadarshsaxena/Sample-jenkins-pipeline-deployment/tree/master', branch: 'master')
+        git(url: 'https://github.com/theadarshsaxena/Sample-jenkins-pipeline-deployment/', branch: 'master')
       }
     }
 
