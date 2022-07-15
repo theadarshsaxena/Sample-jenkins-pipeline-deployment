@@ -21,7 +21,6 @@ pipeline {
     stage('Deployment') {
       steps {
         sh 'docker run -dit --name my-apache-app -p 80:80 -v "$PWD":/usr/local/apache2/htdocs/ httpd:2.4'
-        sh 'sudo chmod 666 /var/run/docker.sock'
       }
     }
 
