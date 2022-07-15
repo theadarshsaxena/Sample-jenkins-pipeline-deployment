@@ -2,8 +2,19 @@ pipeline {
   agent any
   stages {
     stage('Checkout') {
-      steps {
-        git(url: 'https://github.com/theadarshsaxena/Sample-jenkins-pipeline-deployment/', branch: 'master')
+      parallel {
+        stage('Checkout') {
+          steps {
+            git(url: 'https://github.com/theadarshsaxena/Sample-jenkins-pipeline-deployment/', branch: 'master')
+          }
+        }
+
+        stage('PWD') {
+          steps {
+            sh 'pwd'
+          }
+        }
+
       }
     }
 
